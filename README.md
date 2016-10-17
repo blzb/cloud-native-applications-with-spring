@@ -41,7 +41,7 @@
 
 
 
-## 2. Making a Spring Boot application Production Ready
+## 2. Making a Spring Boot application Production Ready (Maybe)
 
 > Code complete != production ready! If you've ever read Michael Nygard's amazing tome, _Release It!_, then you know that the last mile between being code complete and being to production is _much_ longer than anyone ever anticipates. In this lab, we'll look at how Spring Boot is optimized for the continuous delivery of applications into production.
 
@@ -65,7 +65,7 @@
 > the [12 Factor](http://12factor.net/config) manifesto speaks about externalizing that which changes from one environment to another - hosts,  locators, passwords, etc. - from the application itself. Spring Boot readily supports this pattern, but it's not enough. In this lab, we'll loko at how to centralize, externalize, and dynamically update application configuration with the Spring Cloud Config Server.
 
 - go to the Spring Initializr, choose the latest milestone of Spring Boot 1.3, specify an `artifactId` of `config-service` and add `Config Server` from the list of dependencies.
-- you should `git clone` the [Git repository for this workshop - https://github.com/joshlong/bootiful-microservices-config](`https://github.com/joshlong/bootiful-microservices-config.git`)
+- you should `git clone` the [Git repository for this workshop - https://github.com/blzb/bootiful-microservices-config](`https://github.com/blzb/bootiful-microservices-config.git`)
 - In the Config Server's `application.properties`, specify that it should run on port 8888 (`server.port=8888`) and that it should manage the Git repository of configuration that lives in the root directory of the `git clone`'d  configuration. (`spring.cloud.config.server.git.uri=...`).
 - add `@EnableConfigServer` to the `config-service` `DemoApplication`
 - Add `server.port=8888` to the `application.properties` to ensure that the Config Server is running on the right port for service to find it.
